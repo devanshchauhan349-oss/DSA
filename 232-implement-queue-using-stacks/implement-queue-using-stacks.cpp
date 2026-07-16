@@ -1,13 +1,13 @@
 class MyQueue {
 private:
-    stack<int> in_stk;
-    stack<int> out_stk;
+    stack<int> in;
+    stack<int> out;
 
     void transfer() {
-        if (out_stk.empty()) {
-            while (!in_stk.empty()) {
-                out_stk.push(in_stk.top());
-                in_stk.pop();
+        if (out.empty()) {
+            while (!in.empty()) {
+                out.push(in.top());
+                in.pop();
             }
         }
     }
@@ -16,22 +16,22 @@ public:
     MyQueue() {}
     
     void push(int x) {
-        in_stk.push(x);
+        in.push(x);
     }
     
     int pop() {
         transfer();
-        int val = out_stk.top();
-        out_stk.pop();
+        int val = out.top();
+        out.pop();
         return val;
     }
     
     int peek() {
         transfer();
-        return out_stk.top();
+        return out.top();
     }
     
     bool empty() {
-        return in_stk.empty() && out_stk.empty();
+        return in.empty() && out.empty();
     }
 };
