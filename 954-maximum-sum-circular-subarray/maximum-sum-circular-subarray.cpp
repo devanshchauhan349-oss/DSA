@@ -4,18 +4,18 @@ public:
         int total = nums[0];
 
         int Best = nums[0];
-        int currBest = nums[0]; 
+        int bestAns = nums[0]; 
 
         int Worst = nums[0];
-        int currWorst = nums[0];
+        int worstAns = nums[0];
 
         for(int i =1; i < nums.size(); i++) {
             
-                currBest = max(nums[i], currBest + nums[i]);
-                Best = max (Best, currBest);
+                bestAns = max(nums[i], bestAns + nums[i]);
+                Best = max (Best, bestAns);
 
-                currWorst = min(nums[i], currWorst + nums[i]);
-                Worst = min (Worst , currWorst);
+                worstAns = min(nums[i], worstAns + nums[i]);
+                Worst = min (Worst , worstAns);
                 
                 total += nums[i];
         }
