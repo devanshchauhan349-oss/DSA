@@ -3,11 +3,9 @@ public:
     int maxProduct(vector<int>& nums) {
         int Max = nums[0], Min= nums[0], ans = nums[0];
             for(int i = 1; i < nums.size(); i++){
-            int x = nums[i];
-
-            int a = x;
-            int b = x * Max;
-            int c = x * Min;
+            int a = nums[i];
+            int b = a * Max;
+            int c = a * Min;
             Max = max(a, max(b, c));
             Min = min(a, min(b, c));
 
